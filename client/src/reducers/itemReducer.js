@@ -15,7 +15,10 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case GET_ITEMS:
       return {
-        ...state
+        ...state,
+        // the below payload is referring to the response sent after http req
+        items: action.payload,
+        loading: false
       };
     case DELETE_ITEM:
       return {
