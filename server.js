@@ -7,6 +7,8 @@ const items = require('./routes/api/items');
 
 const app = express();
 
+require('dotenv').config();
+
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
