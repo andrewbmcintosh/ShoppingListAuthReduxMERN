@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const config = require('config');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 // User Model
 const User = require('../../models/User');
@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
         newUser.save().then(user => {
           jwt.sign(
             { id: user.id },
-            config.get('jwtSecret'),
+            process.env.JWT_SECRET_KEY,
             {
               expiresIn: 3600
             },
