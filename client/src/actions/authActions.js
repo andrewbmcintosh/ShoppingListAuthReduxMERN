@@ -113,7 +113,7 @@ export const tokenConfig = getState => {
 
   // If token, add to headers
   if (token) {
-    config.headers['x-aut-token'] = token;
+    config.headers['x-auth-token'] = token;
   }
 
   return config;
